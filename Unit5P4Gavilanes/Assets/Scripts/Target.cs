@@ -44,7 +44,6 @@ public class Target : MonoBehaviour
             gameManager.UpdateScore(pointValue);
             Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
         }
-
         
     }
 
@@ -53,7 +52,7 @@ public class Target : MonoBehaviour
         Destroy(gameObject);
         if(!gameObject.CompareTag("Bad"))
         {
-            gameManager.GameOver();
+            gameManager.UpdateLives();
         }
         
     }
