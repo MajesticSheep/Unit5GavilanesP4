@@ -88,25 +88,25 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
+    //This code is for pausing the game
     void PauseMenu()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        //if (Input.GetKeyDown(KeyCode.Space) && isGameActive)
         {
-            if (gamePaused)
+            //if (gamePaused)
             {
-                if (gamePaused == false)
+                //if (gamePaused == false)
                 {
-                    gamePaused = false;
-                    Time.timeScale = 1f;
-                    pauseMenuUI.SetActive(false);
-                    isGameActive = true;
+                    //gamePaused = false;
+                    //Time.timeScale = 1f;
+                    //pauseMenuUI.SetActive(false);
+                    //isGameActive = true;
                 }
                 
                 
             }
 
-            else if (Input.GetKeyDown(KeyCode.Space) && isGameActive)
+            if (Input.GetKeyDown(KeyCode.Space) && isGameActive)
                 {
                     if (!gamePaused)
                     {
@@ -117,6 +117,16 @@ public class GameManager : MonoBehaviour
                     }
                 }
 
+            else if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (gamePaused)
+                {
+                    gamePaused = false;
+                    isGameActive = true;
+                    Time.timeScale = 1f;
+                    pauseMenuUI.SetActive(false);
+                }
+            }
         }
     }
 
